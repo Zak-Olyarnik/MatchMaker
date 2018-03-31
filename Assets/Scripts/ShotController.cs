@@ -50,7 +50,7 @@ public class ShotController : MonoBehaviour
 		}
 		else if (coll.gameObject.tag == "table")
 		{
-			AudioSource.PlayClipAtPoint(tableHit, new Vector3(0, 0, -10), 1f);		// objects that are deactivated/destroyed cannot play sounds so play at point
+            AudioSource.PlayClipAtPoint(tableHit, new Vector3(0, 0, -10), 1f);		// objects that are deactivated/destroyed cannot play sounds so play at point
 			coll.gameObject.GetComponent<TableHealth>().health -= 1;				// table takes two hits to destroy 
 			GameObject score = Instantiate(scoreMinus50, coll.gameObject.transform.position, coll.gameObject.transform.rotation);
 			GameController.score -= 50;
@@ -59,7 +59,7 @@ public class ShotController : MonoBehaviour
 		}
 		else if (coll.gameObject.tag == "balloon")
 		{
-			AudioSource.PlayClipAtPoint(balloonPop, new Vector3(0, 0, -10), 1f);
+            AudioSource.PlayClipAtPoint(balloonPop, new Vector3(0, 0, -10), 1f);
 			GameObject score = Instantiate(scoreMinus20, coll.gameObject.transform.position, coll.gameObject.transform.rotation);
 			GameController.score -= 20;
 			Destroy(score, scoreTime);
@@ -68,7 +68,7 @@ public class ShotController : MonoBehaviour
 		}
 		else if (coll.gameObject.tag == "light")
 		{
-			AudioSource.PlayClipAtPoint(lightBreak, new Vector3(0, 0, -10), 1f);
+            AudioSource.PlayClipAtPoint(lightBreak, new Vector3(0, 0, -10), 1f);
 			GameObject score = Instantiate(scoreMinus20, coll.gameObject.transform.position, coll.gameObject.transform.rotation);
 			GameController.score -= 20;
 			Destroy(score, scoreTime);
@@ -78,7 +78,7 @@ public class ShotController : MonoBehaviour
 		}
 		else if (coll.gameObject.tag == "speaker")
 		{
-			AudioSource.PlayClipAtPoint(speakerBreak, new Vector3(0, 0, -10), 1f);
+            AudioSource.PlayClipAtPoint(speakerBreak, new Vector3(0, 0, -10), 1f);
 			GameObject score = Instantiate(scoreMinus20, coll.gameObject.transform.position, coll.gameObject.transform.rotation);
 			GameController.score -= 20;
 			Destroy(score, scoreTime);
@@ -86,9 +86,9 @@ public class ShotController : MonoBehaviour
 			g.GetComponent<AudioSource>().volume = g.GetComponent<AudioSource>().volume - .4f;
 			coll.gameObject.SetActive(false);
 		}
-		else if (coll.gameObject.tag == "target")
+        else if (coll.gameObject.tag == "target")
 		{
-			if (target1 == null)			// first target hit, store it
+            if (target1 == null)			// first target hit, store it
 			{ target1 = coll.gameObject; }
 			else							// second target hit, compare match IDs
 			{
